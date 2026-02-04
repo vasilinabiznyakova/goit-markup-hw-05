@@ -7,6 +7,8 @@
   --accent-color: #404bbf;
   --white-color: #ffffff;
   --light-bg-color: #f4f4fd;
+  --green-color: #31d0aa;
+  --transition-value: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ============= /VARIABLES ============= */
 
@@ -139,7 +141,7 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-value);
   background-color: var(--brand-color);
 }
 
@@ -186,7 +188,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--dark-color);
   padding: 24px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-value);
 }
 
 .nav-item:hover,
@@ -224,7 +226,7 @@ body {
 }
 
 .contacts-list-item {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-value);
 }
 
 .contacts-list-item:hover,
@@ -272,7 +274,7 @@ body {
   padding: 16px 32px;
   border: none;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-value);
 }
 
 .hero-button:hover,
@@ -355,7 +357,7 @@ body {
 .portfolio-list-item {
   width: calc((100% - 2 * 24px) / 3);
 
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-value);
 }
 
 .portfolio-list-item:hover {
@@ -387,7 +389,7 @@ body {
   background-color: #4d5ae5;
 
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-value);
 }
 
 .portfolio-list-item:hover .portfolio-overlay {
@@ -400,7 +402,6 @@ body {
   border-right: 1px solid #e7e9fc;
   border-bottom: 1px solid #e7e9fc;
 }
-
 
 /* ============= /PORTFOLIO ============= */
 
@@ -440,6 +441,10 @@ body {
   gap: 16px;
 }
 
+.footer-social-links {
+  margin-right: 80px;
+}
+
 .footer-social-description {
   font-weight: 500;
   line-height: 1.5;
@@ -451,6 +456,77 @@ body {
 /* hover/focus for footer social links */
 .footer .social-links-link:hover,
 .footer .social-links-link:focus {
-  background-color: #31d0aa;
+  background-color: var(--green-color);
+}
+
+.subscription-title {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white-color);
+  margin-bottom: 16px;
 }
 /* ============= /FOOTER ============= */
+.subscription-wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.subscription-input {
+  border: 1px solid var(--white-color);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+  background-color: transparent;
+  padding: 8px 16px;
+  margin-right: 24px;
+  transition: border-color var(--transition-value);
+}
+
+.subscription-input:hover,
+.subscription-input:focus {
+  border-color: var(--green-color);
+}
+
+.subscription-input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+}
+.subscription-btn {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 64px 8px 24px;
+  width: 165px;
+  height: 40px;
+  background-color: var(--brand-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+  transition: background-color var(--transition-value);
+}
+
+.subscription-btn:hover,
+.subscription-btn:focus {
+  background-color: var(--green-color);
+}
+
+.subscription-send-icon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  fill: var(--white-color);
+  stroke: rgb(64 64 64);
+}
